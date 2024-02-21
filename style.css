@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -29,7 +33,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 60px !important;
+  font-size: 46px !important;
   outline: 0 !important;
   cursor: pointer;
   user-select: none;
@@ -57,7 +61,7 @@ body {
   box-shadow: none;
 }
 
-.menu-bar>ul {
+.menu-bar > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +71,7 @@ body {
   padding-inline: 20px;
 }
 
-.menu-bar>ul>li>a {
+.menu-bar > ul > li > a {
   padding: 10px;
   transition: color linear 0.25s, text-decoration linear 0.25s;
   cursor: pointer;
@@ -78,8 +82,8 @@ body {
   position: relative;
 }
 
-.menu-bar>ul>li>a::after,
-.menu-bar>ul>li>a.active::after {
+.menu-bar >ul >li > a::after,
+.menu-bar >ul >li > a.active::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -92,26 +96,26 @@ body {
   transition: transform 0.1s linear;
 }
 
-.menu-bar>ul>li>a.active::after {
+.menu-bar > ul > li > a.active::after {
   transform: scaleX(1);
 }
 
-.menu-bar>ul>li>a:hover::after {
+.menu-bar > ul > li > a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.menu-bar[data-scrolled]>ul>li>a {
+.menu-bar[data-scrolled] > ul > li > a {
   color: white;
   text-decoration: none;
   transition: background 0.25s linear, color 0.25s linear;
 }
 
-.menu-bar[data-scrolled]>ul>li>a::after {
+.menu-bar[data-scrolled] > ul > li > a::after {
   all: unset;
 }
 
-.menu-bar[data-scrolled]>ul>li>a:hover {
+.menu-bar[data-scrolled] > ul > li > a:hover {
   background-color: white;
   color: black;
 }
@@ -162,6 +166,14 @@ body {
 }
 
 .bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.front-page-article {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto-fit;
@@ -173,29 +185,91 @@ body {
   height: auto;
 }
 
-.bio > h2 {
+.front-page-article > h2 {
   grid-column: span 2;
   text-align: center;
   font-weight: bold;
 }
 
-.bio > p {
+.front-page-article > p {
   width: 50%;
   padding: 10px;
   place-self: center;
+  line-height: 2;
 }
 
-.bio > img {
+.front-page-article > div {
   place-self: center;
-  width: 60%;
-  height: 60%;
-  border-radius: 5%;
   overflow: hidden;
-  padding: 10px;
-  aspect-ratio: 5.5/8.5;
+  height: 60%;
+  width: auto;
+  border-radius: 25px;
+  position: relative;
+}
+
+.front-page-article > div:not(.no-link) > a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transform-origin: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  background: black;
+  padding: 20px;
+  z-index: 1000;
+  opacity: 0;
+  transition: transform 0.25s linear, opacity 0.25s linear;
+}
+
+.front-page-article > div > img {
+  place-self: center;
+  max-height: 800px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  overflow: hidden;
+  transition: filter 0.25s linear, transform 0.25s linear;
+  scale: 1;
+}
+
+.front-page-article > div:not(.no-link):hover > img {
+  filter: grayscale(100%) blur(1px);
+  /* zoom the image in without making it bigger */
+  transform: scale(1.2);
+}
+
+.front-page-article > div:not(.no-link):hover > a {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+div.view-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.view-more {
+  padding: 20px;
+  border: solid 1px black;
+  text-decoration: none;
+  background: black;
+  color: white;
+  margin: 20px;
+  border-radius: 10px;
+  transition: color 0.25s linear, background 0.25s linear;
+}
+
+a.view-more:hover {
+  color: black;
+  background: white;
 }
 
 .footer {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
