@@ -25,22 +25,24 @@ body {
   }
 }
 
-.arrow-down {
+.see-more {
   background: transparent;
+  position: absolute; 
+  bottom: 10%;
   border: solid 2px white;
   color: white;
-  border-radius: 50%;
+  border-radius: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 46px !important;
-  outline: 0 !important;
+  font-size: 24px !important;
   cursor: pointer;
   user-select: none;
   transition: color 0.25s linear, background-color 0.25s linear;
 }
 
-.arrow-down:hover {
+.see-more:hover {
   background-color: white;
   color: black;
 }
@@ -53,7 +55,6 @@ body {
   z-index: 1000;
   transition: background-color linear 0.25s, box-shadow linear 0.25s;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu-bar[data-scrolled] {
@@ -108,6 +109,7 @@ body {
 .menu-bar[data-scrolled] > ul > li > a {
   color: white;
   text-decoration: none;
+  background: black;
   transition: background 0.25s linear, color 0.25s linear;
 }
 
@@ -267,6 +269,40 @@ a.view-more:hover {
   color: black;
   background: white;
 }
+
+.partners {
+  display: flex;
+  padding: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.partners > h2 {
+  text-align: center;
+  font-weight: bold;
+  width: 75%;
+  border-bottom: 2px solid black;
+}
+
+.partner-card { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 75%;
+  padding: 20px;
+  gap: 25%;
+}
+
+.partner-card > a {
+  color: black;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
 
 .footer {
   margin-top: 50px;
