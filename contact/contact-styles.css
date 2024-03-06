@@ -1,0 +1,86 @@
+body {
+    background: black;
+}
+
+.contact-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.4fr 1fr;
+}
+
+.contact-container > h1 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.contact-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25%;
+}
+
+.contact-container > div:last-of-type {
+    position: relative;
+    grid-column: span 2;
+}
+
+.social-media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;  
+}
+
+.social-media > svg {
+    width: 100%;
+    height: 100%;
+    scale: 0.6;
+    cursor: pointer;
+}
+
+.contact-container > div > * {
+    text-align: center;
+}
+
+.contact-container > div > h2 {
+    font-size: 1.4rem;
+}
+
+.contact-container > div:last-of-type > h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.contact-container > div > a {
+    padding: 20px;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border: solid 1px;
+    transition: color 0.25s linear, background 0.25s linear;
+}
+
+.contact-container > div > a:hover {
+    background: white;
+    color: black;
+}
