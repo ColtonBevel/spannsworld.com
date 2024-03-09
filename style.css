@@ -311,3 +311,57 @@ a.view-more:hover {
   align-items: center;
   flex-direction: column;
 }
+
+
+@media (pointer: coarse) {
+  .front-page-article > div:not(.no-link) > a {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  #earth {
+    width: 250px;
+    height: 250px;
+  }
+
+  .partner-card {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .front-page-article > h2 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .front-page-article {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .front-page-article:first-of-type {
+    padding-top: 40px;
+  }
+
+  .front-page-article > p {
+    width: 100%;
+  }
+
+  .front-page-article > div {
+    max-width: 300px;
+    height: auto;
+    margin: 20px;
+  }
+
+  .front-page-article > div:not(.no-link) > a {
+    white-space: nowrap;
+  }
+}

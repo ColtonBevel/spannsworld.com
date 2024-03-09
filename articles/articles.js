@@ -20,10 +20,6 @@ class article extends HTMLElement {
         return this.getAttribute('img');
     }
 
-    get noLink() {
-        this.getAttribute('no-link');
-    }
-
     render() {
         if (this.url) {
             this.shadow.innerHTML = this.renderWithLink();
@@ -34,143 +30,180 @@ class article extends HTMLElement {
 
     renderNoLink() {
         return `
-            <style> 
-                .front-page-article {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: auto-fit;
-                    text-align: center;
+            <div class="article-card">
+                <img src="${this.img}" alt="${this.alt}">
+                <h1>${this.title}</h1>
+                <p>${this.textContent}</p>
+            </div>
+            
+            <style>
+                .article-card {
+                    display: inline-flex;
+                    flex-direction: column;
                     width: 100%;
-                    justify-content: center;
-                    align-items: center;
-                    height: auto;
+                    padding: 20px;
+                    border-radius: 10px;
+                    background: rgb(50,50,50);
+                    color: white;
+                    text-align: left;
+                    box-sizing: border-box;
+                    margin-bottom: 20px;
+                    break-inside: avoid;
+                    gap: 20px;
+                    position: relative;
+                    border: solid 2px black;
                 }
             
-                .front-page-article > h2 {
-                    grid-column: span 2;
-                    text-align: center;
+                .article-card::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: black;
+                    border-radius: 10px;
+                    z-index: -1;
+                    transition: all 0.25s ease;
+                }
+            
+                .article-card:hover::before {
+                    top: 10px;
+                    left: -10px;
+                }
+            
+                .article-card > h1 {
                     font-weight: bold;
+                    margin: 0;
                 }
-                
-                .front-page-article > p {
-                    width: 50%;
-                    padding: 10px;
-                    place-self: center;
-                    line-height: 2;
+            
+                .article-card > p {
+                    font-size: 1em;
+                    margin: 0;
                 }
-                
-                .front-page-article > div {
-                    place-self: center;
-                    overflow: hidden;
-                    height: 60%;
-                    width: auto;
-                    border-radius: 25px;
+            
+                .article-card > a {
+                    color: inherit;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                    width: min-content;
+                    align-self: flex-end;
+                    white-space: nowrap;
                     position: relative;
                 }
-                
-                .front-page-article > div > img {
-                    place-self: center;
-                    max-height: 800px;
-                    height: 100%;
+            
+                .article-card > a::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
                     width: 100%;
-                    overflow: hidden;
-                    overflow: hidden;
-                    transition: filter 0.25s linear, transform 0.25s linear;
-                    scale: 1;
+                    height: 2px;
+                    background: white;
+                    transition: transform 0.25s ease;
+                    transform: scaleX(0);
+                }
+            
+                .article-card > a:hover::after {
+                    transform: scaleX(1);
+                }
+            
+                .article-card > img {
+                    width: 100%;
+                    border-radius: 10px;
                 }
             </style>
-
-            <div class="front-page-article">
-                <p>${this.textContent}</p>
-                <div>
-                    <img src="${this.img}" alt="${this.alt}">
-                </div>
-            </div>
         `;
     }
 
     renderWithLink() {
         return `
-            <style> 
-                .front-page-article {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: auto-fit;
-                    text-align: center;
+            <div class="article-card">
+                <img src="${this.img}" alt="${this.alt}">
+                <h1>${this.title}</h1>
+                <p>${this.textContent}</p>
+                <a href="${this.url}" target="_blank">Read More</a>
+            </div>
+            
+            <style>
+                .article-card {
+                    display: inline-flex;
+                    flex-direction: column;
                     width: 100%;
-                    justify-content: center;
-                    align-items: center;
-                    height: auto;
+                    padding: 20px;
+                    border-radius: 10px;
+                    background: rgb(50,50,50);
+                    color: white;
+                    text-align: left;
+                    box-sizing: border-box;
+                    margin-bottom: 20px;
+                    break-inside: avoid;
+                    gap: 20px;
+                    position: relative;
+                    border: solid 2px black;
                 }
             
-                .front-page-article > h2 {
-                    grid-column: span 2;
-                    text-align: center;
+                .article-card::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: black;
+                    border-radius: 10px;
+                    z-index: -1;
+                    transition: all 0.25s ease;
+                }
+            
+                .article-card:hover::before {
+                    top: 10px;
+                    left: -10px;
+                }
+            
+                .article-card > h1 {
                     font-weight: bold;
+                    margin: 0;
                 }
-                
-                .front-page-article > p {
-                    width: 50%;
-                    padding: 10px;
-                    place-self: center;
-                    line-height: 2;
+            
+                .article-card > p {
+                    font-size: 1em;
+                    margin: 0;
                 }
-                
-                .front-page-article > div {
-                    place-self: center;
-                    overflow: hidden;
-                    height: 60%;
-                    width: auto;
-                    border-radius: 25px;
+            
+                .article-card > a {
+                    color: inherit;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                    width: min-content;
+                    align-self: flex-end;
+                    white-space: nowrap;
                     position: relative;
                 }
-                
-                .front-page-article > div:not(.no-link) > a {
+            
+                .article-card > a::after {
+                    content: "";
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) scale(0.8);
-                    transform-origin: center;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 10px;
-                    background: black;
-                    padding: 20px;
-                    z-index: 1000;
-                    opacity: 0;
-                    transition: transform 0.25s linear, opacity 0.25s linear;
-                }
-                
-                .front-page-article > div > img {
-                    place-self: center;
-                    max-height: 800px;
-                    height: 100%;
+                    bottom: 0;
+                    right: 0;
                     width: 100%;
-                    overflow: hidden;
-                    overflow: hidden;
-                    transition: filter 0.25s linear, transform 0.25s linear;
-                    scale: 1;
+                    height: 2px;
+                    background: white;
+                    transition: transform 0.25s ease;
+                    transform: scaleX(0);
                 }
-                
-                .front-page-article > div:not(.no-link):hover > img {
-                    filter: grayscale(100%) blur(1px);
-                    /* zoom the image in without making it bigger */
-                    transform: scale(1.2);
+            
+                .article-card > a:hover::after {
+                    transform: scaleX(1);
                 }
-                
-                .front-page-article > div:not(.no-link):hover > a {
-                    transform: translate(-50%, -50%) scale(1);
-                    opacity: 1;
+            
+                .article-card > img {
+                    width: 100%;
+                    border-radius: 10px;
                 }
             </style>
-
-            <div class="front-page-article">
-                <p>${this.textContent}</p>
-                <div>
-                    <a href="${this.url}">Read More</a>
-                    <img src="${this.img}" alt="${this.alt}">
-                </div>
-            </div>
         `;
     }
 }
