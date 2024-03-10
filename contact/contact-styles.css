@@ -30,6 +30,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 25%;
+    grid-column: span 2;
 }
 
 .contact-container > div:last-of-type {

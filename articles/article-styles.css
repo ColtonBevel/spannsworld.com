@@ -11,6 +11,13 @@
 
 @media (max-width: 1000px) {
     .article-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 800px) {
+    .article-container {
         column-count: 1;
     }
 }
+
