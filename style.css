@@ -326,6 +326,9 @@ a.view-more:hover {
   .front-page-article > div:not(.no-link) > a {
     opacity: 1;
     transition: none;
+    background: transparent;
+    color: black;
+    text-decoration: underline;
   }
 }
 
