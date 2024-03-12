@@ -28,10 +28,11 @@ body {
 .see-more {
   background: transparent;
   position: absolute; 
-  bottom: 10%;
+  bottom: 5%;
   border: solid 2px white;
   color: white;
   border-radius: 20px;
+  margin-top: 20px;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -129,13 +130,14 @@ body {
   align-items: center;
   background-color: black;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .earth-container > h1 {
   color: white;
   font-family: "Exo 2", sans-serif !important;
   font-optical-sizing: auto;
+  padding-top: 60px;
   font-weight: 900;
   font-style: normal;
 }
@@ -157,8 +159,9 @@ body {
   background-size: cover;
   border: 2px solid #000;
   border-radius: 50%;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
+  aspect-ratio: 1/1;
   animation: movimiento 30s linear 0s infinite;
   box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset,
     2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset,
@@ -181,7 +184,6 @@ body {
   grid-template-rows: auto-fit;
   text-align: center;
   width: 100%;
-  /* center the grid */
   justify-content: center;
   align-items: center;
   height: auto;
@@ -327,10 +329,21 @@ a.view-more:hover {
   }
 }
 
+@media (max-width: 1200px) {
+  #earth {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .see-more {
+    font-size: 20px !important;
+  }
+}
+
 @media (max-width: 1000px) {
   #earth {
-    width: 250px;
-    height: 250px;
+    width: 250px !important;
+    height: 250px !important;
   }
 
   .partner-card {
