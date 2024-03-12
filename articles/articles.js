@@ -20,6 +20,14 @@ class article extends HTMLElement {
         return this.getAttribute('img');
     }
 
+    get title() {
+        return this.getAttribute('title');
+    }
+
+    get credit() {
+        return this.getAttribute('credit');
+    }
+
     renderImage() {
         if (this.img) {
             return `<img src="${this.img}" alt="${this.alt}">`;
@@ -52,10 +60,19 @@ class article extends HTMLElement {
         }
     }
 
+    renderCredit() {
+        if (this.credit) {
+            return `<p class="credit">${this.credit}</p>`;
+        } else {
+            return '';
+        }
+    }
+
     render() {
         this.shadow.innerHTML = `
             <div class="article-card">
                 ${this.renderImage()}
+                ${this.renderCredit()}
                 ${this.renderTitle()}
                 ${this.renderContent()}
                 ${this.renderLink()}
@@ -102,9 +119,16 @@ class article extends HTMLElement {
                     margin: 0;
                 }
             
-                .article-card > p {
+                .article-card > p:not(.credit) {
                     font-size: 1em;
                     margin: 0;
+                }
+        
+                .credit {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    margin: 0;
+                    color: white;
                 }
             
                 .article-card > a {

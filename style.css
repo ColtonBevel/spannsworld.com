@@ -178,6 +178,14 @@ body {
   gap: 20px;
 }
 
+.m-article-link {
+  display: none;
+}
+
+.credit {
+  grid-column: span 2;
+}
+
 .front-page-article {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -240,7 +248,6 @@ body {
 
 .front-page-article > div:not(.no-link):hover > img {
   filter: grayscale(100%) blur(1px);
-  /* zoom the image in without making it bigger */
   transform: scale(1.2);
 }
 
@@ -324,11 +331,30 @@ a.view-more:hover {
 
 @media (pointer: coarse) {
   .front-page-article > div:not(.no-link) > a {
-    opacity: 1;
-    transition: none;
-    background: transparent;
-    color: black;
-    text-decoration: underline;
+    display: none;
+  }
+
+  .m-article-link {
+    display: block;
+    padding: 10px;
+    border: solid 1px black;
+    width: min-content;
+    white-space: nowrap;
+    place-self: center;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    text-decoration: none;
+  }
+
+  .front-page-article > div:not(.no-link):hover > img {
+    filter: inherit;
+    transform: inherit;
+  }
+  
+  .front-page-article > div:not(.no-link):hover > a {
+    transform: inherit;
+    opacity: inherit;
   }
 }
 
@@ -368,6 +394,10 @@ a.view-more:hover {
     position: relative;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+
+  .credit {
+    grid-column: span 1;
   }
 
   .front-page-article:first-of-type {
