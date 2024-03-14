@@ -319,6 +319,8 @@ a.view-more:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .footer > p > a {
