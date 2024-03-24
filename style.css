@@ -25,6 +25,40 @@ body {
   }
 }
 
+.userconsent-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  background: white;
+  width: 250px;
+  padding: 20px;
+  z-index: 1000;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+
+.userconsent-content > button {
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: color 0.25s linear, background 0.25s linear;
+}
+
+.userconsent-content > button:hover {
+  color: black;
+  background: white;
+}
+
 .see-more {
   background: transparent;
   position: absolute; 
@@ -261,6 +295,8 @@ div.view-more {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 a.view-more {
@@ -306,12 +342,31 @@ a.view-more:hover {
   gap: 25%;
 }
 
-.partner-card > a {
+.partner-card > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.partner-card > img {
+  max-height: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.partner-card > a,
+.partner-card > div > a{
   color: black;
   font-size: 1.4rem;
   cursor: pointer;
 }
 
+.partner-card > p,
+.partner-card > div > p {
+  text-align: center;
+} 
 
 .footer {
   margin-top: 50px;
@@ -332,6 +387,15 @@ a.view-more:hover {
 
 
 @media (pointer: coarse) {
+  .userconsent-content {
+    right: unset;
+    top: unset;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    transform: unset;
+  }
+
   .front-page-article > div:not(.no-link) > a {
     display: none;
   }

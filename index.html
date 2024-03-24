@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WBBG3VH2');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8JG4FQC6D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+            gtag('consent', 'default', {
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'wait_for_update': 500,
+            });
+        gtag('js', new Date());
+
+        gtag('config', 'G-K8JG4FQC6D');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -9,15 +33,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
     <script src="main.js"></script>
-    <title>Spann's World</title>
+    <title>Spann's World | About Spann Cordle</title>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBBG3VH2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="menu-bar" id="navbar">
         <ul>
             <li><a href="/" class="active"><b>Home</b></a></li>
             <li><a href="/articles"><b>Articles</b></a></li>
             <li><a href="/contact"><b>Contact</b></a></li>
         </ul>
+    </div>
+    <div class="userconsent-content" id="userconsent-div">
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <button onclick="acceptCookies()" id="grantButton">Accept</button>
     </div>
     <div class="earth-container">
         <h1>Spann's World</h1>
@@ -28,7 +59,7 @@
     <div class="bio" id="bio">
         <div class="front-page-article">
             <h2>Who am I?</h2>
-            <p>I made history when I successfully pioneered Walmart’s first associate service dog team, making possible jobs for hundreds of disabled persons. Living with CP, I have become a nationally known spokesperson for disabled persons in the workplace.</p>
+            <p>I am Spann Cordle, I made history when I successfully pioneered Walmart’s first associate service dog team, making possible jobs for hundreds of disabled persons. Living with CP, I have become a nationally known spokesperson for disabled persons in the workplace.</p>
             <div class="no-link">
                 <img src="images/Cordle-WalmartWorld.jpg" alt="Spann Cordle pictured on the cover of Walmart World magazine">
             </div>
@@ -53,6 +84,9 @@
         </div>
         <div class="view-more">
             <a href="/articles" class="view-more">View More Articles</a>
+            <br><br><br>
+            <h1>Want me for public speaking or a podcast? </h1>
+            <a href="/contact" class="view-more">Contact Me</a>
         </div>
         <div class="partners">
             <h2>Check Out My Partner(s)</h2>
@@ -60,11 +94,23 @@
                 <a href="https://www.specsforlessrome.com">Specs For Less Rome, GA</a>
                 <img src="/images/partners/specsforlessrome.jpg" alt="Specs For Less Rome, GA logo">
             </div>
+            <div class="partner-card">
+                <div>
+                    <a href="https://www.facebook.com/kayver55">Kay Willingham Shiver</a>
+                    <p>
+                        Kay Willingham Shiver, former Editor of Career Pilot Magazine, is an award-winning writer, photographer, and journalist. Prior to her time at Career Pilot, she was News Editor and Principal Photographer for the Office of Public Relations for Berry College. While on staff at Berry College, she was responsible for all press releases, media coverage, and alumni publications. During this time, she was named “Woman of Achievement” by the Chattooga County Business and Professional Women. She began her journalism career as a reporter and feature writer at The Summerville News, where her reporting on local schools was given statewide recognition with four consecutive Georgia School Bell Awards by the Georgia Association of Educators. In addition to writing and photography, Mrs. Shiver enjoys teaching and served 20 years as a volunteer AWANA leader, teaching hundreds of students in grades K-12. 
+                        <br>
+                        <br>
+                        She most recently has covered the ongoing story of Disability Advocate Spann Cordle, writing for numerous publications, including a chapter in the recently released Second Edition of God’s Junkman by John Charles Turner. Cordle has garnered attention on a national level for his pioneering efforts in service dog teams in the workplace. His story has become intertwined with his hometown of Summerville, its Mainstreet revitalization, revered and acclaimed folk artist, the late Reverend Howard Finster, the work of local artist Billy Smith, and their former teacher and mentor John Turner. Turner’s “World Friendship Project” has resulted in the publication of the Second Edition of God’s Junkman, which includes the story of Turner’s former student, Spann Cordle.
+                    </p>
+                </div>
+                <img src="/images/partners/Cordle-Shiver.jpg" alt="Kay Willingham Shiver pictured with Spann Cordle">
+            </div>
         </div>
     </div>
     <div class="footer">
         <p>© 2024 Spanns World</p>
-        <p>Website by Colton Bevel <a href="https://cbevel.dev">(cbevel.dev)</a></p>
+        <p>Website by Colton Bevel (<a href="https://cbevel.dev">cbevel.dev</a>)</p>
     </div>
 </body>
 </html>

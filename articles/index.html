@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WBBG3VH2');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8JG4FQC6D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+            gtag('consent', 'default', {
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'wait_for_update': 500,
+            });
+        gtag('js', new Date());
+
+        gtag('config', 'G-K8JG4FQC6D');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,15 +36,22 @@
     <script src="../main.js"></script>
     <link rel="stylesheet" href="article-styles.css">
     <script defer src="articles.js"></script>
-    <title>Spann's World</title>
+    <title>Spann's World | Spann Cordle's Articles</title>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBBG3VH2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="menu-bar" id="navbar">
         <ul>
             <li><a href="/"><b>Home</b></a></li>
             <li><a href="/articles" class="active"><b>Articles</b></a></li>
             <li><a href="/contact"><b>Contact</b></a></li>
         </ul>
+    </div>
+    <div class="userconsent-content" id="userconsent-div">
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <button onclick="acceptCookies()" id="grantButton">Accept</button>
     </div>
     <div id="article-container" class="article-container">
         <article-card title="Walmart World Magazine" img="/images/Cordle-WalmartWorld.jpg" alt="Spann Cordle pictured on the cover of walmart world issue 10, 2010">I made history when I successfully pioneered Walmart’s first associate service dog team, making possible jobs for hundreds of disabled persons. Living with CP, I have become a nationally known spokesperson for disabled persons in the workplace.</article-card>
@@ -35,6 +66,9 @@
         <article-card title="A Walmart Story" url="https://newhorizonsilc.wordpress.com/2010/10/14/a-walmart-story/">New Horizons wrote an article about Spann, his service dog Finn, and what Walmart does to make sure that Spann has a comfortable time at his place of employment.</article-card>
         <article-card title="Disability and employment: how to play the cards you have been dealt" credit="Article By: Zubee" img="/images/Cordle-Horizons.webp" alt="Spann Cordle pictured with his service dog, Finn" url="https://disabilityhorizons.com/2015/08/disability-and-employment-how-to-play-the-cards-you-have-been-dealt/">Disability Horizons interviews Spann about his struggles, how he overcame them, and how Finn helps him.</article-card>
         <article-card title="Against the odds: Georgia man doesn't let disability hold him back" credit="Article By: Perla Trevizo" img="/images/Cordle-TimesFreePress.jpg" url="https://www.timesfreepress.com/news/2011/jan/18/against-the-odds/"></article-card>
+        <article-card credit="Illustration By: John Turner" img="/images/Cordle-Times.jpg"></article-card>
+        <article-card img="/images/Cordle-Newspaper-1.jpg"></article-card>
+        <article-card img="/images/Cordle-Newspaper-2.jpg"></article-card>
     </div>
 </body>
 </html>
