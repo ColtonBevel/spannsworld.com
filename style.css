@@ -368,6 +368,16 @@ a.view-more:hover {
   text-align: center;
 } 
 
+.partner-card a {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+}
+
+address {
+  text-align: center;
+}
+
 .footer {
   margin-top: 50px;
   display: flex;
