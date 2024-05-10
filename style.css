@@ -340,6 +340,7 @@ a.view-more:hover {
   width: 75%;
   padding: 20px;
   gap: 25%;
+  text-align: center;
 }
 
 .partner-card > div {
@@ -357,7 +358,7 @@ a.view-more:hover {
 }
 
 .partner-card > a,
-.partner-card > div > a{
+.partner-card > div > a {
   color: black;
   font-size: 1.4rem;
   cursor: pointer;
